@@ -1,0 +1,9 @@
+<suite name="suite">
+<test name="test" Thread-count="5">
+<parameter name="firstname" value="sai"></parameter>
+<parameter name="secondname" value="manoj"></parameter>
+<classes>
+<class name="com.parameters.Prameters"></class>
+</classes>
+</test>
+</suite>

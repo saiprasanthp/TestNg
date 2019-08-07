@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-08-06T16:21:30Z" name="Default suite" finished-at="2019-08-06T16:22:25Z" duration-ms="54139">
+    <groups>
+    </groups>
+    <test started-at="2019-08-06T16:21:30Z" name="Default test" finished-at="2019-08-06T16:22:25Z" duration-ms="54139">
+      <class name="Calender.CalenderDemo">
+        <test-method signature="m1()[pri:0, instance:Calender.CalenderDemo@291caca8]" started-at="2019-08-06T16:21:30Z" name="m1" finished-at="2019-08-06T16:22:24Z" duration-ms="53987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- m1 -->
+      </class> <!-- Calender.CalenderDemo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
