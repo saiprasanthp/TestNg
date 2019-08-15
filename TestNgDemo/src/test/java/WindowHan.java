@@ -19,8 +19,6 @@ public class WindowHan {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		String name=	driver.getWindowHandle();
-		//Set<String> al=	driver.getWindowHandles();
-
 		a=new Actions(driver);
 		a.moveToElement(driver.findElement(By.xpath("(//a[text()=' Click this link to start new Tab '])[1]"))).click().build().perform();
 		Set<String> al=	driver.getWindowHandles();
@@ -31,14 +29,11 @@ public class WindowHan {
 			if(!child.equals(name)) {
 				driver.switchTo().window(child);
 				break;
-				
 			}
-
 		}
 		driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).sendKeys("sss");
 		driver.switchTo().window(name);
 		a.moveToElement(driver.findElement(By.xpath("(//a[text()=' Click this link to start new Tab '])[2]"))).click().build().perform();
 		driver.switchTo().window(name);
-
 	}
 }
