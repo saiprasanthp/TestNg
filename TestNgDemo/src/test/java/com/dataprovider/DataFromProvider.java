@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -20,22 +21,33 @@ public class DataFromProvider {
 		XSSFWorkbook book=new XSSFWorkbook(in);
 		
 		XSSFSheet sheet=book.getSheetAt(0);
-		
 		for(int i=0;i<sheet.getLastRowNum()+1;i++) {
-			System.out.println(sheet.getLastRowNum());
 			
 			
 			XSSFRow row=sheet.getRow(i);
 			
 			for(int j=0;j<row.getLastCellNum();j++) {
 				
-				String name=row.getCell(j).getStringCellValue();
-				k[i][j]=name;	
+				XSSFCell cell=row.getCell(j);
+				
+				switch(cell.getCellType()) {
+				case XSSFCell.CELL_TYPE_NUMERIC:
+					double d=row.getCell(j).getNumericCellValue();
+					k[i][j]=Double.toString(d);
+					break;
+					
+				case XSSFCell.CELL_TYPE_STRING:
+					String name=row.getCell(j).getStringCellValue();
+					k[i][j]=name;
+					break;
+				}
+				
+				
+				
 			}
 		}
 		return k;
 	}
-	
 	
 	@Test(dataProvider="sai")
 	public void m2(String name,String name1,String name2,String name3) {
