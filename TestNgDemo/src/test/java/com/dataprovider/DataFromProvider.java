@@ -41,9 +41,6 @@ public class DataFromProvider {
 					k[i][j]=name;
 					break;
 				}
-				
-				
-				
 			}
 		}
 		return k;
